@@ -1,0 +1,27 @@
+{
+	"sEmptyTable": "조회된 데이터가 없습니다.",
+	"sInfo": "_TOTAL_건이 조회되었습니다.",
+	"sInfoEmpty": "0 건이 조회되었습니다.",
+	"sInfoFiltered": "(필터링의 _MAX_ 항목)",
+	"sInfoPostFix": "",
+	"sInfoThousands": ".",
+	"sLengthMenu": "_MENU_ 조회수/페이지",
+	"sLoadingRecords": "조회 중입니다...",
+	"sProcessing": "진행중입니다...",
+	"sSearch": "검색",
+	"sZeroRecords": "조회된 데이터가 없습니다.",
+	"oPaginate": {
+		"sFirst": "처음",
+		"sPrevious": "이전",
+		"sNext": "다음",
+		"sLast": "마지막"
+	},
+	"oAria": {
+		"sSortAscending": ": 오름차순으로 열을 정렬",
+		"sSortDescending": ": 열을 내림차순으로 정렬"
+	},
+	"language": {
+		"decimal": ",",
+		"thousands": "."
+	}
+}
