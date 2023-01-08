@@ -1,0 +1,33 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model CommonModel
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+<script>
+	var model = "@{
+		@Model.GridData
+	}";
+	var dataSet = JSON.parse(model.replaceAll("&quot;", '"'));
+
+	$(document).ready(function () {
+		$('#example').DataTable({
+			data: dataSet,
+			paging: false,
+			scrollY: '400px',
+			columns: [
+				{ title: 'ProductID' },
+				{ title: 'ProductName' },
+				{ title: 'QuantityPerUnit' },
+				{ title: 'UnitPrice.' },
+				{ title: 'UnitsInStock' },
+				{ title: 'UnitsOnOrder' },
+			],
+		});
+	});
+</script>
+
+<table id="example" class="display" width="100%"></table>
