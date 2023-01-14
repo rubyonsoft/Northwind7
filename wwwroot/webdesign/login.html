@@ -1,0 +1,209 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="css/jQueryUI.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="master-wrapper-page">
+        <div class="header">
+            <div class="header-upper">
+                <div class="header-selectors-wrapper"></div>
+                <div class="header-links-wrapper">
+                    <div class="header-links">
+                        <ul>
+                            <li><a href="/register.html" class="ico-register">Register</a></li>
+                            <li><a href="/login.html" class="ico-login">Log in</a></li>
+                            <li><a href="#" class="ico-wishlist"> <span class="wishlist-label">Wishlist</span> <span class="wishlist-qty">(0)</span> </a></li>
+                            <li id="topcartlink"><a href="#" class="ico-cart"> <span class="cart-label">Shopping cart</span> <span class="cart-qty">(0)</span> </a></li>
+                        </ul>
+                    </div>
+                    <div id="flyout-cart" class="flyout-cart">
+                        <div class="mini-shopping-cart">
+                            <div class="count">You have no items in your shopping cart.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-lower">
+                <div class="header-logo"><a href="/index.html"> <img alt="Your store name" src="/images/logo.png"> </a></div>
+                <div class="search-box store-search-box">
+                    <form method="get" id="small-search-box-form" action="/search"><input type="text" class="search-box-text ui-autocomplete-input" id="small-searchterms" autocomplete="off" name="q" placeholder="Search store" aria-label="Search store"> <button type="submit" class="button-1 search-box-button">Search</button></form>
+                    <ul id="ui-id-1" tabindex="0" class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front" unselectable="on" style="display: none;"></ul>
+                </div>
+            </div>
+        </div>
+        <div class="header-menu">
+            <ul class="top-menu notmobile">
+                <li>
+                    <a href="/computers">Computers </a>
+                    <div class="sublist-toggle"></div>
+                    <ul class="sublist first-level">
+                        <li><a href="/desktops">Desktops </a></li>
+                        <li><a href="/notebooks">Notebooks </a></li>
+                        <li><a href="/software">Software </a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/electronics">Electronics </a>
+                    <div class="sublist-toggle"></div>
+                    <ul class="sublist first-level">
+                        <li><a href="/camera-photo">Camera &amp; photo </a></li>
+                        <li><a href="/cell-phones">Cell phones </a></li>
+                        <li><a href="/others">Others </a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/apparel">Apparel </a>
+                    <div class="sublist-toggle"></div>
+                    <ul class="sublist first-level">
+                        <li><a href="/shoes">Shoes </a></li>
+                        <li><a href="/clothing">Clothing </a></li>
+                        <li><a href="/accessories">Accessories </a></li>
+                    </ul>
+                </li>
+                <li><a href="/digital-downloads">Digital downloads </a></li>
+                <li><a href="/books">Books </a></li>
+                <li><a href="/jewelry">Jewelry </a></li>
+                <li><a href="/gift-cards">Gift Cards </a></li>
+            </ul>
+            <div class="menu-toggle">Categories</div>
+            <ul class="top-menu mobile">
+                <li>
+                    <a href="/computers">Computers </a>
+                    <div class="sublist-toggle"></div>
+                    <ul class="sublist first-level">
+                        <li><a href="/desktops">Desktops </a></li>
+                        <li><a href="/notebooks">Notebooks </a></li>
+                        <li><a href="/software">Software </a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/electronics">Electronics </a>
+                    <div class="sublist-toggle"></div>
+                    <ul class="sublist first-level">
+                        <li><a href="/camera-photo">Camera &amp; photo </a></li>
+                        <li><a href="/cell-phones">Cell phones </a></li>
+                        <li><a href="/others">Others </a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/apparel">Apparel </a>
+                    <div class="sublist-toggle"></div>
+                    <ul class="sublist first-level">
+                        <li><a href="/shoes">Shoes </a></li>
+                        <li><a href="/clothing">Clothing </a></li>
+                        <li><a href="/accessories">Accessories </a></li>
+                    </ul>
+                </li>
+                <li><a href="/digital-downloads">Digital downloads </a></li>
+                <li><a href="/books">Books </a></li>
+                <li><a href="/jewelry">Jewelry </a></li>
+                <li><a href="/gift-cards">Gift Cards </a></li>
+            </ul>
+        </div>
+        <div class="master-wrapper-content">
+            <div class="master-column-wrapper">
+                <div class="center-1">
+                    <div class="page login-page">
+                        <div class="page-title">
+                            <h1>Welcome, Please Sign In!</h1>
+                        </div>
+                        <div class="page-body">
+                            <div class="customer-blocks">
+                                <div class="new-wrapper register-block">
+                                    <div class="title"><strong>New Customer</strong></div>
+                                    <div class="text">By creating an account on our website, you will be able to shop faster, be up to date on an order's status, and keep track of the orders you have previously made.</div>
+                                    <div class="buttons"><button type="button" class="button-1 register-button" onclick="location.href=&quot;https://localhost:7020/register?returnUrl=%2F&quot;">Register</button></div>
+                                </div>
+                                <div class="returning-wrapper fieldset">
+                                    <form method="post" autocomplete="off" action="/login?returnurl=%2F" novalidate="novalidate">
+                                        <div class="title"><strong>Returning Customer</strong></div>
+                                        <div class="form-fields">
+                                            <div class="inputs"><label for="Email">Email:</label> <input class="email" autofocus="" type="email" data-val="true" data-val-email="Wrong email" data-val-required="Please enter your email" id="Email" name="Email"> <span class="field-validation-valid" data-valmsg-for="Email" data-valmsg-replace="true"></span></div>
+                                            <div class="inputs"><label for="Password">Password:</label> <input class="password" type="password" id="Password" name="Password"> <span class="field-validation-valid" data-valmsg-for="Password" data-valmsg-replace="true"></span></div>
+                                            <div class="inputs reversed"><input type="checkbox" data-val="true" data-val-required="The Remember me? field is required." id="RememberMe" name="RememberMe" value="true"> <label for="RememberMe">Remember me?</label> <span class="forgot-password"> <a href="/passwordrecovery">Forgot password?</a> </span></div>
+                                        </div>
+                                        <div class="buttons"><button type="submit" class="button-1 login-button">Log in</button></div><input name="__RequestVerificationToken" type="hidden" value="CfDJ8Kdq9ntSfzhIpCSNkzQ2ouO9Dptka9CYqFsxlEldWKEe74Swbs0F7WZk8Hc5srqjD2UP_aexdVLG-VnQf4AnKqT1T_rI0Hm2axPpcIopdbnhYcHYNy3drY-mQiECFYndSnI7TXqDmhw2sIa3DxgUnNQ"><input name="RememberMe" type="hidden" value="false">
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="external-authentication"></div>
+                            <div class="topic-block">
+                                <div class="topic-block-title">
+                                    <h2>About login / registration</h2>
+                                </div>
+                                <div class="topic-block-body">
+                                    <p>Put your login / registration information here. You can edit this in the admin site.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footer-upper">
+                <div class="footer-block information">
+                    <div class="title"><strong>Information</strong></div>
+                    <ul class="list">
+                        <li><a href="/sitemap">Sitemap</a></li>
+                        <li><a href="/shipping-returns">Shipping &amp; returns</a></li>
+                        <li><a href="/privacy-notice">Privacy notice</a></li>
+                        <li><a href="/conditions-of-use">Conditions of Use</a></li>
+                        <li><a href="/about-us">About us</a></li>
+                        <li><a href="/contactus">Contact us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-block customer-service">
+                    <div class="title"><strong>Customer service</strong></div>
+                    <ul class="list">
+                        <li><a href="/search">Search</a></li>
+                        <li><a href="/news">News</a></li>
+                        <li><a href="/blog">Blog</a></li>
+                        <li><a href="/recentlyviewedproducts">Recently viewed products</a></li>
+                        <li><a href="/compareproducts">Compare products list</a></li>
+                        <li><a href="/newproducts">New products</a></li>
+                    </ul>
+                </div>
+                <div class="footer-block my-account">
+                    <div class="title"><strong>My account</strong></div>
+                    <ul class="list">
+                        <li><a href="/customer/info">My account</a></li>
+                        <li><a href="/order/history">Orders</a></li>
+                        <li><a href="/customer/addresses">Addresses</a></li>
+                        <li><a href="/cart">Shopping cart</a></li>
+                        <li><a href="/wishlist">Wishlist</a></li>
+                        <li><a href="/vendor/apply">Apply for vendor account</a></li>
+                    </ul>
+                </div>
+                <div class="footer-block follow-us">
+                    <div class="social">
+                        <div class="title"><strong>Follow us</strong></div>
+                        <ul class="networks">
+                            <li class="facebook"><a href="https://www.facebook.com/nopCommerce" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+                            <li class="twitter"><a href="https://twitter.com/nopCommerce" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+                            <li class="rss"><a href="/news/rss/1">RSS</a></li>
+                            <li class="youtube"><a href="https://www.youtube.com/user/nopCommerce" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+                            <li class="instagram"><a href="https://www.instagram.com/nopcommerce_official" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                        </ul>
+                    </div>
+                    <div class="newsletter">
+                        <div class="title"><strong>Newsletter</strong></div>
+                        <div class="newsletter-subscribe" id="newsletter-subscribe-block">
+                            <div class="newsletter-email"><input id="newsletter-email" class="newsletter-subscribe-text" placeholder="Enter your email here..." aria-label="Sign up for our newsletter" type="email" name="NewsletterEmail"> <button type="button" id="newsletter-subscribe-button" class="button-1 newsletter-subscribe-button">Subscribe</button></div>
+                            <div class="newsletter-validation"><span id="subscribe-loading-progress" style="display:none" class="please-wait">Wait...</span> <span class="field-validation-valid" data-valmsg-for="NewsletterEmail" data-valmsg-replace="true"></span></div>
+                        </div>
+                        <div class="newsletter-result" id="newsletter-result-block"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-lower">
+                <div class="footer-info"><span class="footer-disclaimer">Copyright © 2023 Your store name. All rights reserved.</span></div>
+                <div class="footer-powered-by">Powered by <a href="https://www.nopcommerce.com/" target="_blank" rel="nofollow">nopCommerce</a></div>
+            </div>
+        </div>
+    </div>   
+</body>
+</html>
