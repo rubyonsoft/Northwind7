@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <title></title>
-    <link href="css/jQueryUI.css" rel="stylesheet" />
+    <link href="/css/jQueryUI.css" rel="stylesheet" />
 </head>
 <body>
     <div class="master-wrapper-page">
@@ -13,8 +13,8 @@
                 <div class="header-links-wrapper">
                     <div class="header-links">
                         <ul>
-                            <li><a href="/register.html" class="ico-register">Register</a></li>
-                            <li><a href="/login.html" class="ico-login">Log in</a></li>
+                            <li><a href="/webdesign/register.html" class="ico-register">Register</a></li>
+                            <li><a href="/webdesign/login.html" class="ico-login">Log in</a></li>
                             <li><a href="#" class="ico-wishlist"> <span class="wishlist-label">Wishlist</span> <span class="wishlist-qty">(0)</span> </a></li>
                             <li id="topcartlink"><a href="#" class="ico-cart"> <span class="cart-label">Shopping cart</span> <span class="cart-qty">(0)</span> </a></li>
                         </ul>
@@ -27,7 +27,7 @@
                 </div>
             </div>
             <div class="header-lower">
-                <div class="header-logo"><a href="/index.html"> <img alt="Your store name" src="/images/logo.png"> </a></div>
+                <div class="header-logo"><a href="/webdesign/index.html"> <img alt="Your store name" src="/images/logo.png"> </a></div>
                 <div class="search-box store-search-box">
                     <form method="get" id="small-search-box-form" action="/search"><input type="text" class="search-box-text ui-autocomplete-input" id="small-searchterms" autocomplete="off" name="q" placeholder="Search store" aria-label="Search store"> <button type="submit" class="button-1 search-box-button">Search</button></form>
                     <ul id="ui-id-1" tabindex="0" class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front" unselectable="on" style="display: none;"></ul>
@@ -118,14 +118,22 @@
                                     <div class="buttons"><button type="button" class="button-1 register-button" onclick="location.href=&quot;https://localhost:7020/register?returnUrl=%2F&quot;">Register</button></div>
                                 </div>
                                 <div class="returning-wrapper fieldset">
-                                    <form method="post" autocomplete="off" action="/login?returnurl=%2F" novalidate="novalidate">
+                                    <form id="formLogin" method="post" action="/Home/Login">
                                         <div class="title"><strong>Returning Customer</strong></div>
                                         <div class="form-fields">
-                                            <div class="inputs"><label for="Email">Email:</label> <input class="email" autofocus="" type="email" data-val="true" data-val-email="Wrong email" data-val-required="Please enter your email" id="Email" name="Email"> <span class="field-validation-valid" data-valmsg-for="Email" data-valmsg-replace="true"></span></div>
-                                            <div class="inputs"><label for="Password">Password:</label> <input class="password" type="password" id="Password" name="Password"> <span class="field-validation-valid" data-valmsg-for="Password" data-valmsg-replace="true"></span></div>
-                                            <div class="inputs reversed"><input type="checkbox" data-val="true" data-val-required="The Remember me? field is required." id="RememberMe" name="RememberMe" value="true"> <label for="RememberMe">Remember me?</label> <span class="forgot-password"> <a href="/passwordrecovery">Forgot password?</a> </span></div>
+                                            <div class="inputs">
+                                                <label for="CustomerID">CustomerID</label>
+                                                <input type="text" data-val="true" data-val-length="&#xC544;&#xC774;&#xB514;&#xC758; &#xAE38;&#xC774;&#xB294; &#xCD5C;&#xC18C; 4&#xC790;&#xC785;&#xB2C8;&#xB2E4;" data-val-length-max="30" data-val-length-min="4" data-val-required="&#xC544;&#xC774;&#xB514;&#xB294; &#xD544;&#xC218; &#xC785;&#xB825;&#xC785;&#xB2C8;&#xB2E4;" id="CustomerID" maxlength="30" name="CustomerID" value=""><span class="required">*</span>
+                                                <span class="text-danger field-validation-valid" data-valmsg-for="CustomerID" data-valmsg-replace="true"></span>
+                                            </div>
+                                            <div class="inputs">
+                                                <label for="Password">Password</label>
+                                                <input type="password" data-val="true" data-val-length="&#xD328;&#xC2A4;&#xC6CC;&#xB4DC; &#xAE38;&#xC774;&#xB294; &#xCD5C;&#xC18C; 4&#xC790;&#xC785;&#xB2C8;&#xB2E4;" data-val-length-max="20" data-val-length-min="4" data-val-required="&#xD328;&#xC2A4;&#xC6CC;&#xB4DC;&#xB294; &#xD544;&#xC218; &#xC785;&#xB825;&#xC785;&#xB2C8;&#xB2E4;" id="Password" maxlength="20" name="Password"><span class="required">*</span>
+                                                <span class="text-danger field-validation-valid" data-valmsg-for="Password" data-valmsg-replace="true"></span>
+                                            </div>
                                         </div>
-                                        <div class="buttons"><button type="submit" class="button-1 login-button">Log in</button></div><input name="__RequestVerificationToken" type="hidden" value="CfDJ8Kdq9ntSfzhIpCSNkzQ2ouO9Dptka9CYqFsxlEldWKEe74Swbs0F7WZk8Hc5srqjD2UP_aexdVLG-VnQf4AnKqT1T_rI0Hm2axPpcIopdbnhYcHYNy3drY-mQiECFYndSnI7TXqDmhw2sIa3DxgUnNQ"><input name="RememberMe" type="hidden" value="false">
+                                        <div class="buttons"><button type="submit" class="button-1 login-button">Log in</button></div>
+                                        <input name="__RequestVerificationToken" type="hidden" value="CfDJ8Kkdb9aCTvZAlCQMIfgI0zVdHPkXOJ19WDZyJ9mWapSr5B2jr69Ft6tkVTJL65aG_GZPSX7IFF2iOCRHcbuNVjPcEZIKePg-K1GNssRzL9fRpGIX2-t30bOTAMLUGKr-_gN5EmZITArQ0vvkLbRk5gM" />
                                     </form>
                                 </div>
                             </div>
@@ -143,67 +151,6 @@
                 </div>
             </div>
         </div>
-        <div class="footer">
-            <div class="footer-upper">
-                <div class="footer-block information">
-                    <div class="title"><strong>Information</strong></div>
-                    <ul class="list">
-                        <li><a href="/sitemap">Sitemap</a></li>
-                        <li><a href="/shipping-returns">Shipping &amp; returns</a></li>
-                        <li><a href="/privacy-notice">Privacy notice</a></li>
-                        <li><a href="/conditions-of-use">Conditions of Use</a></li>
-                        <li><a href="/about-us">About us</a></li>
-                        <li><a href="/contactus">Contact us</a></li>
-                    </ul>
-                </div>
-                <div class="footer-block customer-service">
-                    <div class="title"><strong>Customer service</strong></div>
-                    <ul class="list">
-                        <li><a href="/search">Search</a></li>
-                        <li><a href="/news">News</a></li>
-                        <li><a href="/blog">Blog</a></li>
-                        <li><a href="/recentlyviewedproducts">Recently viewed products</a></li>
-                        <li><a href="/compareproducts">Compare products list</a></li>
-                        <li><a href="/newproducts">New products</a></li>
-                    </ul>
-                </div>
-                <div class="footer-block my-account">
-                    <div class="title"><strong>My account</strong></div>
-                    <ul class="list">
-                        <li><a href="/customer/info">My account</a></li>
-                        <li><a href="/order/history">Orders</a></li>
-                        <li><a href="/customer/addresses">Addresses</a></li>
-                        <li><a href="/cart">Shopping cart</a></li>
-                        <li><a href="/wishlist">Wishlist</a></li>
-                        <li><a href="/vendor/apply">Apply for vendor account</a></li>
-                    </ul>
-                </div>
-                <div class="footer-block follow-us">
-                    <div class="social">
-                        <div class="title"><strong>Follow us</strong></div>
-                        <ul class="networks">
-                            <li class="facebook"><a href="https://www.facebook.com/nopCommerce" target="_blank" rel="noopener noreferrer">Facebook</a></li>
-                            <li class="twitter"><a href="https://twitter.com/nopCommerce" target="_blank" rel="noopener noreferrer">Twitter</a></li>
-                            <li class="rss"><a href="/news/rss/1">RSS</a></li>
-                            <li class="youtube"><a href="https://www.youtube.com/user/nopCommerce" target="_blank" rel="noopener noreferrer">YouTube</a></li>
-                            <li class="instagram"><a href="https://www.instagram.com/nopcommerce_official" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-                        </ul>
-                    </div>
-                    <div class="newsletter">
-                        <div class="title"><strong>Newsletter</strong></div>
-                        <div class="newsletter-subscribe" id="newsletter-subscribe-block">
-                            <div class="newsletter-email"><input id="newsletter-email" class="newsletter-subscribe-text" placeholder="Enter your email here..." aria-label="Sign up for our newsletter" type="email" name="NewsletterEmail"> <button type="button" id="newsletter-subscribe-button" class="button-1 newsletter-subscribe-button">Subscribe</button></div>
-                            <div class="newsletter-validation"><span id="subscribe-loading-progress" style="display:none" class="please-wait">Wait...</span> <span class="field-validation-valid" data-valmsg-for="NewsletterEmail" data-valmsg-replace="true"></span></div>
-                        </div>
-                        <div class="newsletter-result" id="newsletter-result-block"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-lower">
-                <div class="footer-info"><span class="footer-disclaimer">Copyright © 2023 Your store name. All rights reserved.</span></div>
-                <div class="footer-powered-by">Powered by <a href="https://www.nopcommerce.com/" target="_blank" rel="nofollow">nopCommerce</a></div>
-            </div>
-        </div>
-    </div>   
+    </div> 
 </body>
 </html>
