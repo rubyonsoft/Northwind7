@@ -116,17 +116,18 @@
                                 <div class="buttons"><button type="button" class="button-1 register-button" onclick="location.href=&quot;https://localhost:7020/register?returnUrl=%2F&quot;">Register</button></div>
                             </div>
                             <div class="returning-wrapper fieldset">
-                                <form id="formLogin" method="post" action="/Home/Login">
+                                @model Customer
+                                <form id="formLogin" method="post" asp-controller="Home" asp-action="Login">
                                     <div class="title"><strong>Returning Customer</strong></div>
                                     <div class="form-fields">
                                         <div class="inputs">
-                                            <label for="CustomerID">CustomerID</label>
-                                            <input type="text" data-val="true" data-val-length="&#xC544;&#xC774;&#xB514;&#xC758; &#xAE38;&#xC774;&#xB294; &#xCD5C;&#xC18C; 4&#xC790;&#xC785;&#xB2C8;&#xB2E4;" data-val-length-max="30" data-val-length-min="4" data-val-required="&#xC544;&#xC774;&#xB514;&#xB294; &#xD544;&#xC218; &#xC785;&#xB825;&#xC785;&#xB2C8;&#xB2E4;" id="CustomerID" maxlength="30" name="CustomerID" value=""><span class="required">*</span>
+                                            <label asp-for="CustomerID">CustomerID</label>
+                                            <input asp-for="CustomerID" type="text"><span class="required">*</span>
                                             <span class="text-danger field-validation-valid" data-valmsg-for="CustomerID" data-valmsg-replace="true"></span>
                                         </div>
                                         <div class="inputs">
-                                            <label for="Password">Password</label>
-                                            <input type="password" data-val="true" data-val-length="&#xD328;&#xC2A4;&#xC6CC;&#xB4DC; &#xAE38;&#xC774;&#xB294; &#xCD5C;&#xC18C; 4&#xC790;&#xC785;&#xB2C8;&#xB2E4;" data-val-length-max="20" data-val-length-min="4" data-val-required="&#xD328;&#xC2A4;&#xC6CC;&#xB4DC;&#xB294; &#xD544;&#xC218; &#xC785;&#xB825;&#xC785;&#xB2C8;&#xB2E4;" id="Password" maxlength="20" name="Password"><span class="required">*</span>
+                                            <label asp-for="Password">Password</label>
+                                            <input asp-for="Password"><span class="required">*</span>
                                             <span class="text-danger field-validation-valid" data-valmsg-for="Password" data-valmsg-replace="true"></span>
                                         </div>
                                     </div>

@@ -10,7 +10,7 @@ namespace Northwind7.Controllers
 			ProductsService productsService = new ProductsService();
 			string gridData = productsService.GetProductsList();
 
-			CommonModel model = new CommonModel();
+			DataViewModel model = new DataViewModel();
 			model.GridData = gridData;
 			ViewBag.GridData = gridData;
 			return View(model);

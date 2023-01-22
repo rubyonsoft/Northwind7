@@ -10,7 +10,7 @@ namespace Northwind7.Controllers
 		{
 			CategoriesService categoriesService = new CategoriesService();
 			ProductsService productsService = new ProductsService();
-			CommonModel model = new CommonModel()
+			DataViewModel model = new DataViewModel()
 			{
 				GridTable = categoriesService.GetCategoriesList(),
 				GridData = productsService.GetProductsList()

@@ -2,7 +2,7 @@
 
 namespace Northwind7.Models
 {
-	public class CommonModel
+	public class DataViewModel
 	{
 		public string? GridData { get; set; }
 		public GridDataTable? GridTable { get; set; }

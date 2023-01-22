@@ -3,6 +3,8 @@
 *@
 @{
 }
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
 <link href="/css/jQueryUI.css" rel="stylesheet" />
 <div class="master-wrapper-page">
     <div class="header">
@@ -109,23 +111,24 @@
                         <h1>Register</h1>
                     </div>
                     <div class="page-body">
-                        <form id="formRegister" method="post" action="/Home/Register">
+                        @model Customer
+                        <form id="formRegister" asp-controller="Home" asp-action="Register" method="post" onclick="CheckValidate()">
                             <div class="fieldset">
                                 <div class="title"><strong>Your Personal Details</strong></div>
                                 <div class="form-fields">
                                     <div class="inputs">
-                                        <label for="CustomerID">CustomerID</label>
-                                        <input type="text" data-val="true" data-val-length="&#xC544;&#xC774;&#xB514;&#xC758; &#xAE38;&#xC774;&#xB294; &#xCD5C;&#xC18C; 4&#xC790;&#xC785;&#xB2C8;&#xB2E4;" data-val-length-max="30" data-val-length-min="4" data-val-required="&#xC544;&#xC774;&#xB514;&#xB294; &#xD544;&#xC218; &#xC785;&#xB825;&#xC785;&#xB2C8;&#xB2E4;" id="CustomerID" maxlength="30" name="CustomerID" value=""><span class="required">*</span>
-                                        <span class="text-danger field-validation-valid" data-valmsg-for="CustomerID" data-valmsg-replace="true"></span>
+                                        <label asp-for="CustomerID"></label>
+                                        <input asp-for="CustomerID" type="text"><span class="required">*</span>
+                                        <span asp-validation-for="CustomerID" class="text-danger"></span>
                                     </div>
                                     <div class="inputs">
-                                        <label for="ContactName">ContactName</label>
-                                        <input id="ContactName" type="text">
+                                        <label asp-for="ContactName"></label>
+                                        <input asp-for="ContactName" type="text">
                                     </div>
                                     <div class="inputs">
-                                        <label for="Email">Email</label>
-                                        <input type="text" data-val="true" data-val-required="&#xC774;&#xBA54;&#xC77C;&#xC740; &#xD544;&#xC218; &#xC785;&#xB825;&#xC785;&#xB2C8;&#xB2E4;" id="Email" name="Email" value=""><span class="required">*</span>
-                                        <span class="text-danger field-validation-valid" data-valmsg-for="Email" data-valmsg-replace="true"></span>
+                                        <label asp-for="Email"></label>
+                                        <input asp-for="Email" type="text"><span class="required">*</span>
+                                        <span asp-validation-for="Email" class="text-danger"></span>
                                     </div>
                                 </div>
                             </div>
@@ -133,9 +136,9 @@
                                 <div class="title"><strong>Company Details</strong></div>
                                 <div class="form-fields">
                                     <div class="inputs">
-                                        <label for="CompanyName">CompanyName</label>
-                                        <input type="text" data-val="true" data-val-length="&#xD68C;&#xC0AC;&#xC758; &#xAE38;&#xC774;&#xB294; &#xCD5C;&#xC18C; 3&#xC790;&#xC785;&#xB2C8;&#xB2E4;" data-val-length-max="30" data-val-length-min="3" data-val-required="&#xD68C;&#xC0AC;&#xB294; &#xD544;&#xC218; &#xC785;&#xB825;&#xC785;&#xB2C8;&#xB2E4;" id="CompanyName" maxlength="30" name="CompanyName" value=""><span class="required">*</span>
-                                        <span class="text-danger field-validation-valid" data-valmsg-for="CompanyName" data-valmsg-replace="true"></span>
+                                        <label asp-for="CompanyName"></label>
+                                        <input asp-for="CompanyName" type="text"><span class="required">*</span>
+                                        <span asp-validation-for="CompanyName" class="text-danger"></span>
                                     </div>
                                 </div>
                             </div>
@@ -143,14 +146,14 @@
                                 <div class="title"><strong>Your Password</strong></div>
                                 <div class="form-fields">
                                     <div class="inputs">
-                                        <label for="Password">Password</label>
-                                        <input type="password" data-val="true" data-val-length="&#xD328;&#xC2A4;&#xC6CC;&#xB4DC; &#xAE38;&#xC774;&#xB294; &#xCD5C;&#xC18C; 4&#xC790;&#xC785;&#xB2C8;&#xB2E4;" data-val-length-max="20" data-val-length-min="4" data-val-required="&#xD328;&#xC2A4;&#xC6CC;&#xB4DC;&#xB294; &#xD544;&#xC218; &#xC785;&#xB825;&#xC785;&#xB2C8;&#xB2E4;" id="Password" maxlength="20" name="Password"><span class="required">*</span>
-                                        <span class="text-danger field-validation-valid" data-valmsg-for="Password" data-valmsg-replace="true"></span>
+                                        <label asp-for="Password"></label>
+                                        <input asp-for="Password" type="password"><span class="required">*</span>
+                                        <span asp-validation-for="Password" class="text-danger"></span>
                                     </div>
                                     <div class="inputs">
                                         <label>ConfirmPassword</label>
-                                        <input type="password" data-val="true" data-val-required="The ConfirmPassword field is required." id="ConfirmPassword" name="ConfirmPassword"><span class="required">*</span>
-                                        <span class="text-danger field-validation-valid" data-valmsg-for="ConfirmPassword" data-valmsg-replace="true"></span>
+                                        <input asp-for="ConfirmPassword" type="password"><span class="required">*</span>
+                                        <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
                                     </div>
                                 </div>
                             </div>
@@ -163,4 +166,51 @@
             </div>
         </div>
     </div>
-</div> 
+</div>
+@{
+    if (ViewData["message"] != null)
+    {
+        <script>
+            var msg = $('<div/>').html("@ViewData["message"]").html();
+            alert(msg);
+        </script>
+    }
+}
+<script>
+    function CheckValidate() {
+        $("#formRegister").validate({
+            rules: {
+                CustomerID: {
+                    required: true,
+                    rangelength: [3, 15]
+                },
+                CompanyName: {
+                    required: true,
+                    rangelength: [3, 20]
+                },
+                Email: {
+                    required: true,
+                    email: true
+                },
+                Password: {
+                    required: true,
+                    rangelength: [3, 15]
+                },
+                ConfirmPassword: {
+                    required: true,
+                    equalTo: "#Password"
+                }
+            },
+            messages: {
+                CustomerID: {
+                    required: "이름은 필수 입력입니다.",
+                    rangelength: "이름은 {0}자에서 {1}자까지 사용 가능합니다."
+                },
+                Password: {
+                    required: "패스워드는 필수 입력입니다.",
+                    equalTo: "패스워드는 같아야 합니다"
+                },
+            }
+        });
+    }
+</script>
