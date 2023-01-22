@@ -1,10 +1,11 @@
 ﻿using Microsoft.Data.SqlClient;
+using Rubyon.NetFramework;
 using System.Data;
 using System.Text;
 
 namespace Northwind7.Service
 {
-	public class ProductsService
+	public class ProductsService : BaseClass
 	{
 		public string GetProductsList()
 		{
@@ -42,5 +43,19 @@ namespace Northwind7.Service
 			conn.Close();
 			return sb.ToString();
 		}
-	}
+
+        public GridDataTable GetProductsList2()
+		{
+            string querystring = "SELECT ProductID, ProductName, QuantityPerUnit, UnitPrice, UnitsInStock, UnitsOnOrder FROM Products";
+            DataTable dt = DbUtil.GetDataSet(DefaultConnection, querystring, CommandType.Text);
+            GridDataTable DataTableGrid = new GridDataTable();
+
+            DataTableGrid.Init();
+            DataTableGrid.Columns = new string[] { "ProductID", "ProductName", "QuantityPerUnit", "UnitPrice", "UnitsInStock", "UnitsOnOrder" };  // DB Columns
+            DataTableGrid.HiddenColumn(new int[] { 4, 5 });                                                                                                                                   // 	
+            DataTableGrid.DataTableBind(dt, "grid1", 0, false, "300px");
+
+            return DataTableGrid;
+        }
+    }
 }

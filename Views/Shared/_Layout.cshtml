@@ -3,16 +3,23 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Northwind7</title>
+    <title>@ViewData["Title"] - Northwind</title>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+    <script src="~/js/datagrid.js"></script>
+    <script src="~/js/corecontrol.js"></script>
+
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Northwind7.styles.css" asp-append-version="true" />
+    <link href="~/css/jqueryui.css" rel="stylesheet" />
 </head>
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Northwind7</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Northwind 7.0</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -31,20 +38,36 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Categories" asp-action="Index">Categories</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Products" asp-action="List">Products2</a>
+                        </li>
                     </ul>
                 </div>
             </div>
         </nav>
+        <div class="header-upper">
+            <div class="header-links-wrapper">
+                <div class="header-links">
+                    <ul>
+                        <li><a asp-area="" asp-controller="Home" asp-action="Register" class="ico-register">Register</a></li>
+                        <li><a asp-area="" asp-controller="Home" asp-action="Login" class="ico-login">Log in</a></li>
+                        <li><a href="#" class="ico-wishlist"> <span class="wishlist-label">Wishlist</span> <span class="wishlist-qty">(0)</span> </a></li>
+                        <li id="topcartlink"><a href="#" class="ico-cart"> <span class="cart-label">Shopping cart</span> <span class="cart-qty">(0)</span> </a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </header>
+
     <div class="container">
         <main role="main" class="pb-3">
+
             @RenderBody()
         </main>
     </div>
-
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2023 - Northwind7 - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2023 - Northwind - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

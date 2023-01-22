@@ -1,0 +1,81 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model DataViewModel
+@using Rubyon.Helpers
+<div class="x_panel2" style="height:300px; width: 100%;">
+    <div class="x_content">
+        <table id="grid1" class="table table-striped table-bordered jambo_table" style="width:100%">
+            <thead>
+                <tr class="headings">
+                    <th class="col-auto">ProductID</th>
+                    <th class="col-auto">ProductName</th>
+                    <th class="col-auto">QuantityPerUnit</th>
+                    <th class="col-auto">UnitPrice</th>
+                    <th class="col-auto">UnitsInStock</th>
+                    <th class="col-auto">UnitsOnOrder</th>
+                </tr>
+            </thead>
+        </table>
+      </div>
+    <div class="col-md-6 col-sm-12 col-xs-12 mt10">
+        <span><h3>상세내역</h3></span>
+            <table id="txtInput" class="table tb_03" cellspacing="1" cellpadding="0" width="100%" border="0">
+                <tr>
+                    <th>ProductID</th>
+                    <td>
+                        @Html.CSTextBox("txtProductID", new { placeholder="ProductID", MaxLength="4", PK="True", CSRequired="True", Index="0"})
+                    </td>
+                </tr>
+                <tr>
+                    <th>ProductName</th>
+                    <td>
+                        @Html.CSTextBox("txtProductName", new { placeholder="ProductName", MaxLength="20", CSRequired="True", Index="1"})
+                    </td>
+                </tr>
+                <tr>
+                    <th>QuantityPerUnit</th>
+                    <td>
+                        @Html.TextBox("txtQuantityPerUnit", "", new {@class="", placeholder="ProductID", MaxLength="2", Index="2"})
+                    </td>
+                </tr>
+                <tr>
+                    <th>UnitPrice</th>
+                    <td>
+                        @Html.CSTextBox("txtUnitPrice", new { MaxLength="12", TextType="Currency", Index="3"})
+                    </td>
+                </tr>
+                <tr>
+                    <th>UnitsInStock</th>
+                    <td>
+                        @Html.CSTextBox("txtUnitsInStock", new { MaxLength="4", TextType="Numeric", Index="4"})
+                    </td>
+                </tr>
+                <tr>
+                    <th>UnitsOnOrder</th>
+                    <td>
+                        @Html.CSTextBox("txtUnitsOnOrder", new { MaxLength="4", TextType="Numeric", Index="5"})
+                    </td>
+                </tr>
+            </table>
+        </div>
+</div>
+<script>
+    GridDataBind("@Model.GridTable.GridData", "@Model.GridTable.BindingSetting");
+    gridRowClickEvent('grid1', SetRowData, 'selected');
+
+     //GridView(목록) Row 클릭시 실행되는 함수
+    function SetRowData(rowData) {
+        var dataArray = new Array();
+        dataArray.push("txtProductID");
+        dataArray.push("txtProductName");
+        dataArray.push("txtQuantityPerUnit");
+        dataArray.push("txtUnitPrice");
+        dataArray.push("txtUnitsInStock");
+        dataArray.push("txtUnitsOnOrder");
+
+        //상세보기 컨트롤 세팅
+        SetInputAuto(rowData, dataArray);
+    }
+
+</script>

@@ -1,6 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Northwind7.Service;
 using Northwind7.Models;
+using Rubyon.NetFramework;
+using System.Reflection;
+
 namespace Northwind7.Controllers
 {
 	public class ProductsController : Controller
@@ -15,5 +18,16 @@ namespace Northwind7.Controllers
 			ViewBag.GridData = gridData;
 			return View(model);
 		}
-	}
+
+        public IActionResult List()
+		{
+            ProductsService productsService = new ProductsService();
+			DataViewModel model = new DataViewModel()
+			{
+				GridTable = productsService.GetProductsList2()
+			};
+
+            return View(model);
+		}
+    }
 }

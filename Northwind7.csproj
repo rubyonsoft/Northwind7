@@ -9,7 +9,7 @@
   <ItemGroup>
     <PackageReference Include="LitJson" Version="0.18.0" />
     <PackageReference Include="Microsoft.Data.SqlClient" Version="5.0.1" />
-    <PackageReference Include="Rubyon.NetFramework" Version="1.0.4" />
+    <PackageReference Include="Rubyon.NetFramework" Version="1.0.6" />
   </ItemGroup>
 
 </Project>
